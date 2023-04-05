@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Webcam App</title>
+  </head>
+  <body>
+    <button id="start_btn" onclick="startVideo()">Start Video</button>
+    <button id="stop_btn" onclick="stopVideo()" disabled>Stop Video</button>
+    <br />
+    <img id="video" />
+    <script>
+      var video = document.getElementById("video");
+      var startBtn = document.getElementById("start_btn");
+      var stopBtn = document.getElementById("stop_btn");
+      var xhr = null;
+
+      function startVideo() {
+        startBtn.disabled = true;
+        stopBtn.disabled = false;
+        xhr = new XMLHttpRequest();
+        xhr.open("GET", "/start_video", true);
+        xhr.send(null);
+        video.src = "/video_feed";
+      }
+
+      function stopVideo() {
+        startBtn.disabled = false;
+        stopBtn.disabled = true;
+        xhr = new XMLHttpRequest();
+        xhr.open("GET", "/stop_video", true);
+        xhr.send(null);
+        video.src = "";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+.brand {
+  float: right;
+  list-style: none;
+}
+
+.firstname {
+  color: white;
+  font-weight: 700;
+}
+
+.lastname {
+  color: white;
+  font-weight: 700;
+}
+
+.fcontainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  /*background-color: lightslategray;*/
+  background-image: url(image/bg.png);
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
+  position: relative;
+}
